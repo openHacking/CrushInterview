@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Write the result printed by the following code(1)</title>
+      <link href="/CrushInterview/Write-the-result-printed-by-the-following-code(1)/"/>
+      <url>/CrushInterview/Write-the-result-printed-by-the-following-code(1)/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Write-the-result-printed-by-the-following-code"><a href="#Write-the-result-printed-by-the-following-code" class="headerlink" title="Write the result printed by the following code"></a>Write the result printed by the following code</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    result[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      total += i * a;</span><br><span class="line">      <span class="built_in">console</span>.log(total);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">1</span>);</span><br><span class="line">result[<span class="number">0</span>]();</span><br><span class="line">result[<span class="number">1</span>]();</span><br><span class="line">result[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure><h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><details><summary>CLICK ME</summary><p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result[<span class="number">0</span>](); <span class="comment">//3</span></span><br><span class="line">result[<span class="number">1</span>](); <span class="comment">//6</span></span><br><span class="line">result[<span class="number">2</span>](); <span class="comment">//9</span></span><br></pre></td></tr></table></figure></p></details><h2 id="analyze"><a href="#analyze" class="headerlink" title="analyze"></a>analyze</h2><p>First of all, when <code>foo(1);</code> is executed, the <code>foo</code> function will pass parameter 1 inside, and the for loop will mount three new functions into the <code>result</code> array.<br>Then, we execute the new functions mounted in <code>result</code> in turn, we can find that the new function is mainly to obtain <code>i</code> and <code>a</code> for calculation, there are 3 important points:</p><ol><li><code>i</code> is temporarily taken from the scope of the current function, and <code>i</code> has become 3 after the loop</li><li>The same with <code>a</code>, after the execution of <code>foo(1);</code>, the local variable <code>a=1</code> has overwritten the global <code>a=3</code></li><li>When the first <code>result</code> function is executed, the global <code>total</code> changes, which will affect the subsequent calculations</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> console </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> variable </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
