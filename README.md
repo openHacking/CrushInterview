@@ -1,5 +1,9 @@
 # CrushInterview
-javascript interview questions and answers
+Hexo theme template
 
-## Website
-https://openhacking.github.io/CrushInterview/
+## Demo
+[CrushInterview](https://openhacking.github.io/CrushInterview/)
+
+## Introduction
+Any javascript interview question or answer,go to [lwebapp](https://lwebapp.com/)
+
